@@ -2564,7 +2564,7 @@ function lookupLocationforIP($inIP)
 {
 	global $geoIPLookupMethod,$OS;
 	$addr = 'addr='.$inIP;
-	$api_key= 'api_key=2dc7401e92ee741dbac53a4be849e571c7d0af65';
+	$key= 'TBC';
 	$parameters = '?'.$addr . '&' . $api_key;
 	$response = '';
 //echo (__FUNCTION__ . " - IP lookup using " . $geoIPLookupMethod);
@@ -2775,7 +2775,7 @@ function lookupLatLongForLocation($inAddr)
 	$xlat = '';
 	$xlong = '';
 	$inAddr = str_replace(' ','+',$inAddr);	
-	$parameters = "address=".$inAddr . "&key=AIzaSyCSP9nBZ1aRvIZRc4tQbXznyrISL7Gt6d8";
+	$parameters = "address=".$inAddr . "tbc";
 	$response = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?'.$parameters);
 	$response = json_decode($response);
 	$status = $response->{'status'}[0];
@@ -2834,7 +2834,7 @@ function lookupLocationForLatLong($lat,$long)
 {
 	//echo("Geocode API  lookuplocation call for: ".$lat. ", ".$long."<br/>");
 	$latlng = $lat.",".$long;	
-	$parameters = "latlng=".$latlng . "&key=AIzaSyCSP9nBZ1aRvIZRc4tQbXznyrISL7Gt6d8";
+	$parameters = "latlng=".$latlng . "TBC";
 	$response = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?'.$parameters);
 	$response = json_decode($response);
 	//echo("Geocode API response:<pre>");
